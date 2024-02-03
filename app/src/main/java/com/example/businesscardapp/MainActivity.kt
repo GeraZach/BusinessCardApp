@@ -1,5 +1,6 @@
 package com.example.businesscardapp
 
+import android.graphics.drawable.shapes.Shape
 import android.media.Image
 import android.os.Bundle
 import android.widget.Space
@@ -31,6 +32,7 @@ import androidx.compose.ui.graphics.ColorFilter
 import androidx.compose.ui.graphics.ColorMatrix
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.painterResource
+import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
@@ -65,7 +67,6 @@ fun MainInformation() {
         horizontalAlignment = Alignment.Start) {
         Image(painter = faceImage, contentDescription = "Photo of the developer",
             contentScale = ContentScale.Crop,
-            colorFilter = ColorFilter.colorMatrix(ColorMatrix().apply { setToSaturation(0f)}),
             modifier = Modifier
                 .shadow(6.dp)
                 .clip(RoundedCornerShape(22.dp))
@@ -78,12 +79,13 @@ fun MainInformation() {
             )
 
         Text(text = "Georgii Lopatko",
-            fontSize = 30.sp,
+            fontSize = 40.sp,
+            fontWeight = FontWeight.SemiBold,
             color = Color.White,
             )
         Text(text = "Trainee Android Developer",
             fontSize = 20.sp,
-            color = Color.White
+            color = Color.White,
             )
     }
 }
@@ -100,13 +102,16 @@ fun ContactInformation() {
 
         ) {
         Text(text = "+79005139776",
-            color = Color.White)
+            color = Color.White,
+            fontSize = 20.sp)
         Spacer(Modifier.size(5.dp))
         Text(text = "lopatkogeorgii@gmail.com",
-            color = Color.White)
+            color = Color.White,
+            fontSize = 20.sp)
         Spacer(Modifier.size(5.dp),)
         Text(text = "@lopatkoger",
             color = Color.White,
+            fontSize = 20.sp
             )
     }
 }
